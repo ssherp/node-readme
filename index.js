@@ -2,11 +2,17 @@
 //add a package that would import generate fill
 //export from "badmath"
 //to import we will use request key word example: const badmath=require('./badmath.js') 15-16 in repo
-const inquirer= require("inquirer");
+const inquirer = require("inquirer");
 const fs = require("fs")
-const generateMarkdown = require("./utils/generateMarkdown")
+const generateMarkdown = require("./utils/generateMarkdown");
+const { type } = require("os");
 // TODO: Create an array of questions for user input
 const questions = [
+    {
+        type:"input",
+        name:"github",
+        message:"what is your github username",
+    },
     {
         type: "input",
         name: "title",
@@ -18,11 +24,31 @@ const questions = [
         message: "description of your project?",
     },
     {
+        type: "input",
+        name: "installation",
+        message: "write installation information",
+    },
+    {
+        type: "input",
+        name: "usage",
+        message: "write usage information",
+    },
+     {
         type: "list",
         name: "license",
-        message:"choose your license?",
-        choices:["MIT","IBM","Apache","boost"]
+        message: "choose your license?",
+        choices: ["MIT", "IBM", "Apache", "boost",]
     },
+    {
+        type:"input",
+        name:"contributors",
+        message:"who contributed to the project?",
+    },
+    {
+        type:"input",
+        name:"test",
+        message:""
+    }
 
 
 
@@ -30,24 +56,26 @@ const questions = [
 ];
 
 // TODO: Create a function to write README file
-function writeToFile(fileName,data) {
-fs.writeFileSync(fileName,data)
+function writeToFile(fileName, data) {
+    fs.writeFileSync(fileName, data)
     //create the README
 }
 
 // TODO: Create a function to initialize app
 function init() {
-    inquirer.prompt(questions).then(data=>{
-       
-        writeToFile("README.md",generateMarkdown(data))
-    })
+    inquirer.prompt(questions).then(data => {
+
+        writeToFile("README.md", generateMarkdown(data))
+    }).catch((error) => {
+        console.log(error);
+    });
     //ask the user questions
     //we need to save answer
     //create content for the readme function generate markdown 
     // call generate markdown function 
     // call writeToFile 
     //insert object to answers
-    
+
 
 }
 
