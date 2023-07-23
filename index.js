@@ -11,7 +11,12 @@ const questions = [
     {
         type:"input",
         name:"github",
-        message:"what is your github username",
+        message:"what is your github username?",
+    },
+    {
+        type:"input",
+        name:"email",
+        message:"what is your email address?"
     },
     {
         type: "input",
@@ -37,7 +42,7 @@ const questions = [
         type: "list",
         name: "license",
         message: "choose your license?",
-        choices: ["MIT", "IBM", "Apache", "boost",]
+        choices: ["MIT", "IBM", "Apache", "boost","none"],
     },
     {
         type:"input",
@@ -47,7 +52,7 @@ const questions = [
     {
         type:"input",
         name:"test",
-        message:""
+        message:"what command should be run to run test",
     }
 
 
