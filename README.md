@@ -5,6 +5,8 @@ This is a Node.js application that automates the creation of README files for an
 As a student in a coding bootcamp, I often find myself creating multiple projects. Writing README files for each project can be time-consuming and repetitive. To make this process easier, I developed this Node.js application that automates the generation of README files based on user input.
  With this Node.js application, you can save time and focus on developing amazing projects without worrying about the README documentation.
 
+ [visit the tutorial video](https://drive.google.com/file/d/1VHVHfNB3PVKS-SUFkRZxHu4S_0I2HJxj/view)
+
 ## Features
 
 * Interactive command-line interface using the inquirer package to gather project details.
